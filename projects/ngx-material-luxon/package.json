@@ -8,6 +8,7 @@
     "@angular/material": "^10",
     "luxon": "^1"
   },
+  "repository": "andreialecu/ngx-material-luxon",
   "dependencies": {
     "tslib": "^2.0.0"
   }
