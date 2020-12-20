@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build ngx-material-luxon --prod",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "publish-npm": "yarn build && cd dist/ngx-material-luxon && yarn publish"
   },
   "private": true,
   "dependencies": {
@@ -23,9 +24,13 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1100.5",
+    "@angular/cdk": "^11.0.3",
     "@angular/cli": "~11.0.3",
     "@angular/compiler-cli": "~11.0.3",
+    "@angular/material": "^11.0.3",
     "@types/jasmine": "~3.6.0",
+    "@types/luxon": "^1.25.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
@@ -35,6 +40,8 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "luxon": "^1.25.0",
+    "ng-packagr": "^11.0.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",

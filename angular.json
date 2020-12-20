@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-material-luxon": {
+      "projectType": "library",
+      "root": "projects/ngx-material-luxon",
+      "sourceRoot": "projects/ngx-material-luxon/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-material-luxon/tsconfig.lib.json",
+            "project": "projects/ngx-material-luxon/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-material-luxon/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-material-luxon/src/test.ts",
+            "tsConfig": "projects/ngx-material-luxon/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-material-luxon/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-material-luxon/tsconfig.lib.json",
+              "projects/ngx-material-luxon/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-material-luxon"
 }

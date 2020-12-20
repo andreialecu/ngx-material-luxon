@@ -1,0 +1,14 @@
+{
+  "name": "ngx-material-luxon",
+  "version": "1.0.0",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^10",
+    "@angular/core": "^10",
+    "@angular/material": "^10",
+    "luxon": "^1"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}
