@@ -10,8 +10,7 @@ import { MatDateFormats } from '@angular/material/core';
 
 export const MAT_LUXON_DATE_FORMATS: MatDateFormats = {
   parse: {
-    // Note: this isn't localized like `D`, however Luxon can't parse input against `D`.
-    dateInput: 'L/d/yyyy',
+    dateInput: 'D',
   },
   display: {
     dateInput: 'D',
