@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^10",
-    "@angular/core": "^10",
-    "@angular/material": "^10",
-    "luxon": "^1"
+    "@angular/common": ">=10",
+    "@angular/core": ">=10",
+    "@angular/material": ">=10",
+    "luxon": ">=1"
   },
   "repository": "andreialecu/ngx-material-luxon",
   "dependencies": {
