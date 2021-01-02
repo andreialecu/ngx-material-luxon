@@ -110,7 +110,10 @@ export class LuxonDateAdapter extends DateAdapter<DateTime> {
   }
 
   getDayOfWeekNames(style: 'long' | 'short' | 'narrow'): string[] {
-    return Info.weekdays(style, { locale: this.locale });
+    // rotate weekday names to match 0 == Sunday (Luxon Info lists Monday at index 0)
+    // see https://moment.github.io/luxon/docs/class/src/info.js~Info.html#static-method-weekdays
+    const _weekdays = Info.weekdays(style, { locale: this.locale });
+    return _weekdays.slice(6).concat(_weekdays.slice(0,6));
   }
 
   getYearName(date: DateTime): string {
