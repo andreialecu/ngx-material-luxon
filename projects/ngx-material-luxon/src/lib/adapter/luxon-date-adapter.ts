@@ -169,10 +169,25 @@ export class LuxonDateAdapter extends DateAdapter<DateTime> {
         return iso8601Date;
       }
 
-      const fromFormat = DateTime.fromFormat(value, parseFormat, options);
+      if(Array.isArray(parseFormat)) {
 
-      if (this.isValid(fromFormat)) {
-        return fromFormat;
+        for(let i=0; i<parseFormat.length; i++) {
+
+          const fromFormat = DateTime.fromFormat(value, parseFormat[i], options);
+
+          if (this.isValid(fromFormat)) {
+            return fromFormat;
+          }
+
+        }
+
+      } else {
+
+        const fromFormat = DateTime.fromFormat(value, parseFormat, options);
+
+        if (this.isValid(fromFormat)) {
+          return fromFormat;
+        }
       }
 
       return this.invalid();
