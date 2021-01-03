@@ -159,7 +159,7 @@ export class LuxonDateAdapter extends DateAdapter<DateTime> {
     );
   }
 
-  parse(value: any, parseFormat: string): DateTime | null {
+  parse(value: any, parseFormat: string | string[]): DateTime | null {
     const options: DateTimeOptions = this._getOptions();
 
     if (typeof value == 'string' && value.length > 0) {
@@ -169,21 +169,9 @@ export class LuxonDateAdapter extends DateAdapter<DateTime> {
         return iso8601Date;
       }
 
-      if(Array.isArray(parseFormat)) {
-
-        for(let i=0; i<parseFormat.length; i++) {
-
-          const fromFormat = DateTime.fromFormat(value, parseFormat[i], options);
-
-          if (this.isValid(fromFormat)) {
-            return fromFormat;
-          }
-
-        }
-
-      } else {
-
-        const fromFormat = DateTime.fromFormat(value, parseFormat, options);
+      const parseFormats = Array.isArray(parseFormat) ? parseFormat : [parseFormat];
+      for (const format of parseFormats) {
+        const fromFormat = DateTime.fromFormat(value, format, options);
 
         if (this.isValid(fromFormat)) {
           return fromFormat;
