@@ -376,6 +376,16 @@ describe('LuxonDateAdapter', () => {
     );
   });
 
+  it('should parse string according to first matching format', () => {
+    expect(
+      adapter.parse('1/2/2017', ['L/d/yyyy', 'yyyy/d/L'])!.toISO()
+    ).toEqual(DateTime.local(2017, JAN, 2).toISO());
+
+    expect(adapter.parse('1/2/2017', ['yyyy/d/L', 'L/d/yyyy'])!.toISO()).toEqual(
+      DateTime.local(2017, JAN, 2).toISO()
+    );
+  });
+
   it('should parse number', () => {
     let timestamp = new Date().getTime();
     expect(adapter.parse(timestamp, 'LL/dd/yyyy')!.toISO()).toEqual(
