@@ -18,6 +18,13 @@ export interface MatLuxonDateAdapterOptions {
    * {@default false}
    */
   useUtc: boolean;
+
+  /**
+   * Luxon does not have support for retrieving the first day of the week.
+   * This allows supplying a custom function to override it.
+   * Remember that you need to return 0 = Sunday, 1 = Monday
+   */
+  firstDayOfWeek?: (locale: string) => number;
 }
 
 /** InjectionToken for LuxonDateAdapter to configure options. */
@@ -52,6 +59,7 @@ function range<T>(length: number, valueFunction: (index: number) => T): T[] {
 @Injectable()
 export class LuxonDateAdapter extends DateAdapter<DateTime> {
   private _useUTC: boolean;
+  private _getFirstDayOfWeek: MatLuxonDateAdapterOptions["firstDayOfWeek"];
 
   constructor(
     @Optional() @Inject(MAT_DATE_LOCALE) dateLocale: string,
@@ -61,6 +69,7 @@ export class LuxonDateAdapter extends DateAdapter<DateTime> {
   ) {
     super();
     this._useUTC = options ? !!options.useUtc : false;
+    this._getFirstDayOfWeek = options?.firstDayOfWeek;
     this.setLocale(dateLocale || DateTime.local().locale);
   }
 
@@ -110,10 +119,11 @@ export class LuxonDateAdapter extends DateAdapter<DateTime> {
   }
 
   getDayOfWeekNames(style: 'long' | 'short' | 'narrow'): string[] {
-    // rotate weekday names to match 0 == Sunday (Luxon Info lists Monday at index 0)
-    // see https://moment.github.io/luxon/docs/class/src/info.js~Info.html#static-method-weekdays
-    const _weekdays = Info.weekdays(style, { locale: this.locale });
-    return _weekdays.slice(6).concat(_weekdays.slice(0,6));
+    const luxonWeekdays = Info.weekdays(style, { locale: this.locale });
+    // luxon returns the first day of week as Monday
+    // but angular material expects Sunday, so we rotate the array
+    luxonWeekdays.unshift(luxonWeekdays.pop()!);
+    return luxonWeekdays;
   }
 
   getYearName(date: DateTime): string {
@@ -122,6 +132,7 @@ export class LuxonDateAdapter extends DateAdapter<DateTime> {
 
   getFirstDayOfWeek(): number {
     // Luxon doesn't have support for getting the first day of the week.
+    if (this._getFirstDayOfWeek) return this._getFirstDayOfWeek(this.locale);
     return 0;
   }
 
