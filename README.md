@@ -11,7 +11,7 @@
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)]()
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -92,6 +92,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/andreialecu"><img src="https://avatars0.githubusercontent.com/u/697707?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrei Alecu</b></sub></a><br /><a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=andreialecu" title="Documentation">📖</a> <a href="#infra-andreialecu" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=andreialecu" title="Code">💻</a> <a href="#projectManagement-andreialecu" title="Project Management">📆</a></td>
     <td align="center"><a href="https://harves.net/"><img src="https://avatars3.githubusercontent.com/u/12858056?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daniel Harvey</b></sub></a><br /><a href="https://github.com/andreialecu/ngx-material-luxon/issues?q=author%3Adanielsharvey" title="Bug reports">🐛</a> <a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=danielsharvey" title="Code">💻</a></td>
+    <td align="center"><a href="http://crisbeto.com/"><img src="https://avatars0.githubusercontent.com/u/4450522?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kristiyan Kostadinov</b></sub></a><br /><a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=crisbeto" title="Code">💻</a> <a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=crisbeto" title="Tests">⚠️</a> <a href="#ideas-crisbeto" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 

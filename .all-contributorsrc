@@ -31,6 +31,17 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "crisbeto",
+      "name": "Kristiyan Kostadinov",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4450522?v=4",
+      "profile": "http://crisbeto.com/",
+      "contributions": [
+        "code",
+        "test",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7
