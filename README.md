@@ -89,7 +89,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/andreialecu"><img src="https://avatars0.githubusercontent.com/u/697707?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrei Alecu</b></sub></a><br /><a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=andreialecu" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/andreialecu"><img src="https://avatars0.githubusercontent.com/u/697707?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrei Alecu</b></sub></a><br /><a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=andreialecu" title="Documentation">📖</a> <a href="#infra-andreialecu" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=andreialecu" title="Code">💻</a> <a href="#projectManagement-andreialecu" title="Project Management">📆</a></td>
   </tr>
 </table>
 
