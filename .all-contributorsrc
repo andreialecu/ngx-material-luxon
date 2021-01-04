@@ -21,6 +21,16 @@
         "code",
         "projectManagement"
       ]
+    },
+    {
+      "login": "danielsharvey",
+      "name": "Daniel Harvey",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/12858056?v=4",
+      "profile": "https://harves.net/",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7

@@ -1,6 +1,6 @@
 <h1 align="center">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
  ngx-material-luxon
 </h1>
@@ -90,6 +90,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/andreialecu"><img src="https://avatars0.githubusercontent.com/u/697707?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrei Alecu</b></sub></a><br /><a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=andreialecu" title="Documentation">📖</a> <a href="#infra-andreialecu" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=andreialecu" title="Code">💻</a> <a href="#projectManagement-andreialecu" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://harves.net/"><img src="https://avatars3.githubusercontent.com/u/12858056?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daniel Harvey</b></sub></a><br /><a href="https://github.com/andreialecu/ngx-material-luxon/issues?q=author%3Adanielsharvey" title="Bug reports">🐛</a> <a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=danielsharvey" title="Code">💻</a></td>
   </tr>
 </table>
 
