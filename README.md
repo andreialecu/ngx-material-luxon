@@ -1,4 +1,7 @@
 <h1 align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
  ngx-material-luxon
 </h1>
 
@@ -76,3 +79,23 @@ const firstDayOfWeek = (locale: string) => {
 ```
 
 For most apps, a simple return like above is probably fine. For more complex apps, you can use a third party library like: [weekstart](https://npmjs.com/package/weekstart)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/andreialecu"><img src="https://avatars0.githubusercontent.com/u/697707?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrei Alecu</b></sub></a><br /><a href="https://github.com/andreialecu/ngx-material-luxon/commits?author=andreialecu" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
