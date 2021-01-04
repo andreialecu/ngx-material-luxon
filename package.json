@@ -7,7 +7,15 @@
     "build": "ng build ngx-material-luxon --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "publish-npm": "yarn build && cd dist/ngx-material-luxon && yarn publish"
+    "hooks:pre-commit": "node hooks/pre-commit.js",
+    "commit": "git-cz",
+    "release:first": "yarn release -- --first-release",
+    "deploy": "ng deploy --base-href=https://ngneat.github.io/libName/",
+    "copy": "cp -r README.md dist/ngx-material-luxon",
+    "build:lib": "ng build ngx-material-luxon --prod && yarn copy",
+    "test:lib": "ng test ngx-material-luxon",
+    "release": "cd projects/ngx-material-luxon && standard-version --infile ../../CHANGELOG.md",
+    "test:lib:headless": "cross-env CI=true yarn test:lib"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +27,7 @@
     "@angular/platform-browser": "~11.0.3",
     "@angular/platform-browser-dynamic": "~11.0.3",
     "@angular/router": "~11.0.3",
+    "@ngneat/lib": "^1.0.6",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -29,10 +38,18 @@
     "@angular/cli": "~11.0.3",
     "@angular/compiler-cli": "~11.0.3",
     "@angular/material": "^11.0.3",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-angular": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@ngneat/spectator": "^6.1.2",
     "@types/jasmine": "~3.6.0",
     "@types/luxon": "^1.25.0",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "1.0.0-rc.1",
     "codelyzer": "^6.0.0",
+    "cross-env": "^7.0.3",
+    "git-cz": "^4.7.6",
+    "husky": "^4.3.5",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.1.0",
@@ -40,11 +57,31 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "lint-staged": "^10.5.3",
     "luxon": "^1.25.0",
     "ng-packagr": "^11.0.0",
+    "prettier": "^2.2.1",
     "protractor": "~7.0.0",
+    "standard-version": "^9.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,ts,html,component.html}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn hooks:pre-commit && lint-staged"
+    }
   }
 }

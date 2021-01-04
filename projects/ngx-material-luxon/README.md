@@ -1,25 +1,24 @@
 # NgxMaterialLuxon
 
-[Luxon](https://moment.github.io/luxon/) Date Adapters for Angular Material
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
-This is based on the work of [crisbeto](https://github.com/crisbeto) in https://github.com/angular/components/pull/14681. Original PR has been left unmerged due to https://github.com/angular/components/pull/14681#issuecomment-457685311
+## Code scaffolding
 
-## Installation
+Run `ng generate component component-name --project ngx-material-luxon` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-material-luxon`.
+> Note: Don't forget to add `--project ngx-material-luxon` or else it will be added to the default project in your `angular.json` file. 
 
+## Build
 
-```bash
-npm install --save ngx-material-luxon
-```
+Run `ng build ngx-material-luxon` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Publishing
 
-```bash
-yarn add ngx-material-luxon
-```
+After building your library with `ng build ngx-material-luxon`, go to the dist folder `cd dist/ngx-material-luxon` and run `npm publish`.
 
-## Usage:
+## Running unit tests
 
-```ts
-import { MatLuxonDateModule } from 'ngx-material-luxon';
-```
+Run `ng test ngx-material-luxon` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Add `MatLuxonDateModule` to your root `@NgModule` `imports`.
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

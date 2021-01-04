@@ -15,15 +15,9 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2018", "dom"],
     "paths": {
-      "ngx-material-luxon": [
-        "dist/ngx-material-luxon/ngx-material-luxon",
-        "dist/ngx-material-luxon"
-      ]
+      "ngx-material-luxon": ["projects/ngx-material-luxon/src/public-api.ts"]
     }
   },
   "angularCompilerOptions": {
