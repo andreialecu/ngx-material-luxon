@@ -273,36 +273,36 @@ describe('LuxonDateAdapter', () => {
 
   it('should get long day of week names', () => {
     expect(adapter.getDayOfWeekNames('long')).toEqual([
+      'Sunday',
       'Monday',
       'Tuesday',
       'Wednesday',
       'Thursday',
       'Friday',
       'Saturday',
-      'Sunday',
     ]);
   });
 
   it('should get short day of week names', () => {
     expect(adapter.getDayOfWeekNames('short')).toEqual([
+      'Sun',
       'Mon',
       'Tue',
       'Wed',
       'Thu',
       'Fri',
       'Sat',
-      'Sun',
     ]);
   });
 
   it('should get narrow day of week names', () => {
     expect(adapter.getDayOfWeekNames('narrow')).toEqual([
+      'S',
       'M',
       'T',
       'W',
       'T',
       'F',
-      'S',
       'S',
     ]);
   });
@@ -312,23 +312,23 @@ describe('LuxonDateAdapter', () => {
 
     if (features.intl && features.intlTokens) {
       expect(adapter.getDayOfWeekNames('long')).toEqual([
+        '日曜日',
         '月曜日',
         '火曜日',
         '水曜日',
         '木曜日',
         '金曜日',
         '土曜日',
-        '日曜日',
       ]);
     } else {
       expect(adapter.getDayOfWeekNames('long')).toEqual([
+        'Sunday',
         'Monday',
         'Tuesday',
         'Wednesday',
         'Thursday',
         'Friday',
         'Saturday',
-        'Sunday',
       ]);
     }
   });
@@ -709,25 +709,24 @@ describe('LuxonDateAdapter with LOCALE_ID override', () => {
 });
 
 describe('LuxonDateAdapter with MAT_LUXON_DATE_ADAPTER_OPTIONS override', () => {
-  let adapter: LuxonDateAdapter;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [LuxonDateModule],
-      providers: [
-        {
-          provide: MAT_LUXON_DATE_ADAPTER_OPTIONS,
-          useValue: { useUtc: true },
-        },
-      ],
-    }).compileComponents();
-  }));
-
-  beforeEach(inject([DateAdapter], (d: LuxonDateAdapter) => {
-    adapter = d;
-  }));
-
   describe('use UTC', () => {
+    let adapter: LuxonDateAdapter;
+
+    beforeEach(async(() => {
+      TestBed.configureTestingModule({
+        imports: [LuxonDateModule],
+        providers: [
+          {
+            provide: MAT_LUXON_DATE_ADAPTER_OPTIONS,
+            useValue: { useUtc: true },
+          },
+        ],
+      }).compileComponents();
+    }));
+
+    beforeEach(inject([DateAdapter], (d: LuxonDateAdapter) => {
+      adapter = d;
+    }));
     it('should create Luxon date in UTC', () => {
       // Use 0 since createDate takes 0-indexed months.
       expect(adapter.createDate(2017, 0, 5).toISO()).toBe(
@@ -748,6 +747,31 @@ describe('LuxonDateAdapter with MAT_LUXON_DATE_ADAPTER_OPTIONS override', () => 
     it('should return UTC date when deserializing', () => {
       const date = adapter.deserialize('1985-04-12T23:20:50.52Z')!;
       expect(date.toISO()).toBe(date.toUTC().toISO());
+    });
+  });
+
+  describe('getFirstDayOfWeek', () => {
+    let adapter: LuxonDateAdapter;
+    const FIRST_DAY = 2;
+    const firstDayOfWeek = (locale: string) => FIRST_DAY;
+
+    beforeEach(async(() => {
+      TestBed.configureTestingModule({
+        imports: [LuxonDateModule],
+        providers: [
+          {
+            provide: MAT_LUXON_DATE_ADAPTER_OPTIONS,
+            useValue: { firstDayOfWeek },
+          },
+        ],
+      }).compileComponents();
+    }));
+
+    beforeEach(inject([DateAdapter], (d: LuxonDateAdapter) => {
+      adapter = d;
+    }));
+    it('should return overriden day', () => {
+      expect(adapter.getFirstDayOfWeek()).toEqual(FIRST_DAY);
     });
   });
 });
