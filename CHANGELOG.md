@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.1.1 (2021-02-04)
+
+### Bug Fixes
+
+* 🐛 day of week array incorrectly being mutated ([91fff22](https://github.com/andreialecu/ngx-material-luxon/commit/91fff22183aaad04dee20d9fc717b315e8cfe995)), closes [#7](https://github.com/andreialecu/ngx-material-luxon/issues/7)
+
 ## 1.1.0 (2021-01-04)
 
 
