@@ -58,7 +58,9 @@ class AppModule { }
 
 ### Specifying the first day of the week
 
-Luxon does not support have built-in support for returning the first day of the week of the current locale. However, the library allows overriding it via an optional hook.
+Luxon does not have built-in support for returning the first day of the week of the current locale. 
+
+However, this library allows overriding it via an optional hook.
 
 Example:
 
